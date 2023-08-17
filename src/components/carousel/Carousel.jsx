@@ -17,7 +17,7 @@ import './style.scss';
 import { current } from "@reduxjs/toolkit";
 
 
-const Carousel = ({title, data, loading, endpoint}) => {
+const Carousel = ({title, data, loading, endPoint}) => {
     // console.log(data)
     const carouselContainer = useRef();
     const {url} = useSelector((state) => state.home);
@@ -69,7 +69,7 @@ const Carousel = ({title, data, loading, endpoint}) => {
                         <div 
                         key={item.id}
                         className="carouselItem"
-                        onClick={() => navigate(`/${item.media_type || endpoint}/${item.id}`)}
+                        onClick={() => navigate(`/${item.media_type || endPoint}/${item.id}`)}
                         >
                             <div className="posterBlock">
                                 <Img src={posterUrl} />
